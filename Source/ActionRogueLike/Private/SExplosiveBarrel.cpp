@@ -34,9 +34,6 @@ void ASExplosiveBarrel::Explode(UPrimitiveComponent* HitComponent,
 		const FHitResult& Hit)
 {
 	RadialForce->FireImpulse();
-
-	StaticMesh->SetSimulatePhysics(false);
-	StaticMesh->SetVisibility(false);
 }
 
 // Called when the game starts or when spawned
