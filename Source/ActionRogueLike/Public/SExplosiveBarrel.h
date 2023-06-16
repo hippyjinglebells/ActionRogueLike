@@ -15,6 +15,7 @@ class ACTIONROGUELIKE_API ASExplosiveBarrel : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ASExplosiveBarrel();
+	virtual void PostInitializeComponents() override;
 
 protected:
 
