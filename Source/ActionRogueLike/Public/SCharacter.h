@@ -18,12 +18,20 @@ class ACTIONROGUELIKE_API ASCharacter : public ACharacter
 protected:
 
 	UPROPERTY(EditAnywhere, Category= "Attack")
-	TSubclassOf<AActor> ProjectileClass;
+	TSubclassOf<AActor> PrimaryProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category="Attack")
+	TSubclassOf<AActor> UltimateProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category="Attack")
+	TSubclassOf<AActor> TeleportProjectileClass;
 
 	UPROPERTY(EditAnywhere, Category= "Attack")
 	UAnimMontage* AttackAnim;
 
 	FTimerHandle TimerHandle_PrimaryAttack;
+	FTimerHandle TimerHandle_UltimateAttack;
+	FTimerHandle TimerHandle_Teleport;
 	
 public:
 	// Sets default values for this character's properties
@@ -47,8 +55,13 @@ protected:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void PrimaryAttack();
+	void Attack_TimeElapsed(TSubclassOf<AActor> ProjectileClass);
 	void PrimaryAttack_TimeElapsed();
 	void PrimaryInteract();
+	void UltimateAttack();
+	void UltimateAttack_TimeElapsed();
+	void Teleport();
+	void Teleport_TimeElapsed();
 
 public:	
 	// Called every frame

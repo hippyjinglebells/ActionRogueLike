@@ -6,6 +6,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "SInteractionComponent.h"
+#include "Math/RotationMatrix.h"
 
 // Sets default values
 ASCharacter::ASCharacter()
@@ -59,7 +60,9 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 
 	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &ASCharacter::PrimaryAttack);
+	PlayerInputComponent->BindAction("UltimateAttack", IE_Pressed, this, &ASCharacter::UltimateAttack);
 	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &ASCharacter::PrimaryInteract);
+	PlayerInputComponent->BindAction("Teleport", IE_Pressed, this, &ASCharacter::Teleport);
 
 }
 
@@ -83,6 +86,16 @@ void ASCharacter::MoveRight(float Value)
 	AddMovementInput(RightVector, Value);
 }
 
+void ASCharacter::PrimaryInteract()
+{
+	if (InteractionComponent)
+	{
+		InteractionComponent->PrimaryInteract();
+	}
+}
+
+
+//Start code dump for projectiles
 void ASCharacter::PrimaryAttack()
 {
 	PlayAnimMontage(AttackAnim);
@@ -92,27 +105,79 @@ void ASCharacter::PrimaryAttack()
 
 void ASCharacter::PrimaryAttack_TimeElapsed()
 {
+	Attack_TimeElapsed(PrimaryProjectileClass);
+}
 
+void ASCharacter::UltimateAttack()
+{
+	PlayAnimMontage(AttackAnim);
+	
+	GetWorldTimerManager().SetTimer(TimerHandle_UltimateAttack, this, &ASCharacter::UltimateAttack_TimeElapsed, 0.2f);
+}
+
+void ASCharacter::UltimateAttack_TimeElapsed()
+{
+	Attack_TimeElapsed(UltimateProjectileClass);	
+}
+
+void ASCharacter::Teleport()
+{
+	PlayAnimMontage(AttackAnim);
+	
+	GetWorldTimerManager().SetTimer(TimerHandle_Teleport, this, &ASCharacter::Teleport_TimeElapsed, 0.2f);
+}
+
+void ASCharacter::Teleport_TimeElapsed()
+{
+	Attack_TimeElapsed(TeleportProjectileClass);
+}
+
+
+void ASCharacter::Attack_TimeElapsed(TSubclassOf<AActor> ProjectileClass)
+{
+	
 	if(ensure(ProjectileClass))
 	{
-		FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
-	
-		FTransform SpawnTM = FTransform(GetControlRotation(),HandLocation);
-
+		//Initialize Parameters for spawning a projectile
+		FCollisionObjectQueryParams ObjectQueryParams;
+		ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldDynamic);
+		ObjectQueryParams.AddObjectTypesToQuery(ECC_WorldStatic);
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 		SpawnParams.Instigator = this;
-	
-		GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
+
+		//LineCast to determine if cross-hair is on a Target
+		FHitResult Target;
+		FVector Start = CameraComp->GetComponentLocation();
+		FVector End = Start + (CameraComp->GetComponentRotation().Vector()*10000);
+		bool bTarget = GetWorld()->LineTraceSingleByObjectType(Target, Start, End, ObjectQueryParams);
+
+		FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
+		FTransform SpawnTM;
+
+		
+
+		//Adjust spawn rotation to point at target
+		if (bTarget)
+		{
+			UE_LOG(LogTemp, Log, TEXT("Target %s"), *Target.ImpactPoint.ToString())
+			
+			FVector TargetLocation = Target.ImpactPoint;
+			FRotationMatrix NewRotation = FRotationMatrix(GetControlRotation());
+			NewRotation = NewRotation.MakeFromX(TargetLocation - HandLocation).Rotator();
+			
+			SpawnTM = FTransform(NewRotation.Rotator(), HandLocation);
+			GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Log, TEXT("No Target"))
+			
+			SpawnTM = FTransform(GetControlRotation(),HandLocation);
+			GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
+		}
+		
 	}
 
-}
-
-void ASCharacter::PrimaryInteract()
-{
-	if (InteractionComponent)
-	{
-		InteractionComponent->PrimaryInteract();
-	}
 }
 
