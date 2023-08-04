@@ -20,7 +20,7 @@ void USInteractionComponent::PrimaryInteract()
 	UCameraComponent* CameraComp = MyOwner->GetComponentByClass<UCameraComponent>();
 	TArray<FHitResult> Targets;
 	FVector Start = CameraComp->GetComponentLocation();
-	FVector End = Start + (CameraComp->GetComponentRotation().Vector()*10000);
+	FVector End = Start + (CameraComp->GetComponentRotation().Vector()*100);
 
 	float Radius = 30.0f;
 	
@@ -37,7 +37,7 @@ void USInteractionComponent::PrimaryInteract()
 			FRotationMatrix NewRotation = FRotationMatrix(EyeRotation);
 			NewRotation = NewRotation.MakeFromX(TargetLocation - EyeLocation).Rotator();
 
-			End = EyeLocation + (NewRotation.Rotator().Vector() * 1000);
+			End = EyeLocation + (NewRotation.Rotator().Vector() * 100);
 
 	}
 	

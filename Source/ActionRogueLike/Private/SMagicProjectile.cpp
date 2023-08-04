@@ -9,6 +9,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 #include  "SAttributeComponent.h"
+#include "Components/AudioComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ASMagicProjectile::ASMagicProjectile()
@@ -17,6 +19,8 @@ ASMagicProjectile::ASMagicProjectile()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASMagicProjectile::OnActorOverlap);
+
+	ImpactAudioComp = CreateDefaultSubobject<UAudioComponent>("ImpactAudioComp");
 	
 }
 
@@ -29,9 +33,12 @@ void ASMagicProjectile::OnActorOverlap(UPrimitiveComponent* OnComponentBeginOver
 		if (AttributeComp)
 		{
 			AttributeComp->ApplyHealthChange(-20.0f);
-
-			Destroy();
 		}
+
+		UGameplayStatics::PlaySoundAtLocation(this, ImpactAudioComp->Sound, GetActorLocation());
+
+		Destroy();
+		
 	}
 }
 

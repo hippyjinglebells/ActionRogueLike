@@ -34,6 +34,13 @@ ASCharacter::ASCharacter()
 	
 }
 
+void ASCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	AttributeComp->OnHealthChanged.AddDynamic(this, &ASCharacter::OnHealthChanged);
+}
+
 // Called when the game starts or when spawned
 void ASCharacter::BeginPlay()
 {
@@ -135,6 +142,22 @@ void ASCharacter::Teleport_TimeElapsed()
 	Attack_TimeElapsed(TeleportProjectileClass);
 }
 
+void ASCharacter::OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth,
+	float Delta)
+{
+	if(NewHealth <= 0.0f && Delta < 0.0f)
+	{
+		APlayerController* PC = Cast<APlayerController>(GetController());
+		DisableInput(PC);
+	}
+	if (Delta < 0.0f)
+	{
+		GetMesh()->SetScalarParameterValueOnMaterials("TimeToHit", GetWorld()->TimeSeconds);
+	}
+}
+
+
+
 
 void ASCharacter::Attack_TimeElapsed(TSubclassOf<AActor> ProjectileClass)
 {
@@ -163,8 +186,6 @@ void ASCharacter::Attack_TimeElapsed(TSubclassOf<AActor> ProjectileClass)
 		//Adjust spawn rotation to point at target
 		if (bTarget)
 		{
-			UE_LOG(LogTemp, Log, TEXT("Target %s"), *Target.ImpactPoint.ToString())
-			
 			FVector TargetLocation = Target.ImpactPoint;
 			FRotationMatrix NewRotation = FRotationMatrix(GetControlRotation());
 			NewRotation = NewRotation.MakeFromX(TargetLocation - HandLocation).Rotator();
@@ -172,10 +193,9 @@ void ASCharacter::Attack_TimeElapsed(TSubclassOf<AActor> ProjectileClass)
 			SpawnTM = FTransform(NewRotation.Rotator(), HandLocation);
 			GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 		}
+		//If no target, use end point of line trace
 		else
 		{
-			UE_LOG(LogTemp, Log, TEXT("No Target"))
-			
 			SpawnTM = FTransform(GetControlRotation(),HandLocation);
 			GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 		}

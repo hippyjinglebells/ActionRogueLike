@@ -29,7 +29,6 @@ void ASTeleportProjectile::Tick(float DeltaTime)
 
 void ASTeleportProjectile::ProjectileTimerElapsed()
 {
-	UE_LOG(LogTemp, Log, TEXT("ProjectileTimerElapsed Function Triggered"));
 	MovementComp->Velocity = FVector::ZeroVector;
 
 	TeleportEffectComp->Activate();
@@ -39,7 +38,6 @@ void ASTeleportProjectile::ProjectileTimerElapsed()
 
 void ASTeleportProjectile::OnEffectFinish()
 {
-	UE_LOG(LogTemp, Log, TEXT("OnEffectFinish Function Triggered"));
 	APawn* MyInstigator = GetInstigator();
 	MyInstigator->SetActorLocation(SphereComp->GetComponentLocation());
 

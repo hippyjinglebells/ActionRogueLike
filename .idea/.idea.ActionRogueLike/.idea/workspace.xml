@@ -8,27 +8,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22453aea-be72-4608-a9e6-1875f13f0711" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/MF_HitFlashDemo.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/MI_PBRDemo.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_DissolveEffect.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_HealthBar.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_HitFlashDemo.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_HitFlashDemo_Inst.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_PBRDemo.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_SineWave.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/M_SineWaveBP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/SineWaveBP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/TargetDummyBP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/4/50/ROUEEU0EYW3FYN0I4WV6ID.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/5/5B/8G731DCN5CZSHKRMTDXX5R.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/E/11/AZPQUJNFTTRREJAE1F64DP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/E/1G/GZNANJ55C7G303N9DEY88S.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/E/87/0KKK79I2JZX804SXCFJ0GR.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/STargetDummy.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/STargetDummy.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/AI/MinionControllerBP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/AI/MinionRangedBB.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/AI/MinionRangedBP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/AI/MinionRangedBT.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Audio/Att_Projectile.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Audio/MagicProjectileImpact.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Audio/MagicProjectileLoop.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/9/WM/SCWFZAE47B6EI5J575XIRU.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/A/87/B1QV27VUZXZOFEF9P9SEF9.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/B/XU/1VF60NH45PVJJ9KS5DEEL8.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/AI/SAICharacter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/AI/SAIController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/AI/SBTService_CheckAttackRange.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/AI/SAICharacter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/AI/SAIController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/AI/SBTService_CheckAttackRange.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRogueLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRogueLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ActionRogueLike.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ActionRogueLike.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/MagicProjectileBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/MagicProjectileBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/MF_HitFlashDemo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/Materials/MF_HitFlashDemo.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/TargetDummyBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/TargetDummyBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/TreasureChestBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/TreasureChestBP.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ActionRogueLike/UI/PlayerHealth_Widget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRogueLike/UI/PlayerHealth_Widget.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ExampleContent/Materials/MI_CharacterSimple_Inst.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/MI_CharacterSimple_Inst.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ExampleContent/Materials/M_CharacterSimple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/M_CharacterSimple.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Gideon_AnimBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonGideon/Characters/Heroes/Gideon/Gideon_AnimBlueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ParagonMinions/Characters/Minions/Down_Minions/Meshes/MinionRanged_AnimBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ParagonMinions/Characters/Minions/Down_Minions/Meshes/MinionRanged_AnimBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/1/F2/TYQ9TXSBBHZNEYK24PHKN4.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/2/YI/H1I7XCJ92JC9Y193DP935Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/2/YI/H1I7XCJ92JC9Y193DP935Y.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/9/JW/O6CVG07WWPLIBQJCYUAQGF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/9/JW/O6CVG07WWPLIBQJCYUAQGF.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/A/JT/ZEH94SJ2YDDHWF6R0TS8QI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/A/JT/ZEH94SJ2YDDHWF6R0TS8QI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/E/1G/GZNANJ55C7G303N9DEY88S.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRogueLike/Maps/TestLevel/E/1G/GZNANJ55C7G303N9DEY88S.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/ActionRogueLike.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/ActionRogueLike.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SAttributeComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SAttributeComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SBaseProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SBaseProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SInteractionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SInteractionComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SMagicProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/SMagicProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Private/STeleportProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Private/STeleportProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SAttributeComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SAttributeComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SBaseProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SBaseProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SMagicProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRogueLike/Public/SMagicProjectile.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,8 +317,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2RoLlVH3CPSKnLBKyeOJ1AajVJq" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -320,8 +346,8 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\hippy\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\hippy\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\hippy\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\hippy\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
       "C:\\Users\\hippy\\AppData\\Local\\Symbols\\src"
     ]
   }
@@ -332,6 +358,7 @@
         <option name="CONFIGURATION" value="DebugGame Editor" />
         <option name="PLATFORM" value="Win64" />
         <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/ActionRogueLike.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
         <option name="WORKING_DIRECTORY" value="$(LocalDebuggerWorkingDirectory)" />
@@ -342,6 +369,7 @@
         <option name="CONFIGURATION" value="Shipping" />
         <option name="PLATFORM" value="Win64" />
         <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/ActionRogueLike.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
         <option name="WORKING_DIRECTORY" value="$(LocalDebuggerWorkingDirectory)" />
@@ -352,6 +380,7 @@
         <option name="CONFIGURATION" value="DebugGame" />
         <option name="PLATFORM" value="Win64" />
         <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/ActionRogueLike.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
         <option name="WORKING_DIRECTORY" value="$(LocalDebuggerWorkingDirectory)" />
@@ -362,6 +391,7 @@
         <option name="CONFIGURATION" value="Development Editor" />
         <option name="PLATFORM" value="Win64" />
         <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/ActionRogueLike.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
         <option name="WORKING_DIRECTORY" value="$(LocalDebuggerWorkingDirectory)" />
@@ -372,6 +402,7 @@
         <option name="CONFIGURATION" value="Development" />
         <option name="PLATFORM" value="Win64" />
         <option name="PROJECT_FILE_PATH" value="$PROJECT_DIR$/Intermediate/ProjectFiles/ActionRogueLike.vcxproj" />
+        <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXE_PATH" value="$(LocalDebuggerCommand)" />
         <option name="PROGRAM_PARAMETERS" value="$(LocalDebuggerCommandArguments)" />
         <option name="WORKING_DIRECTORY" value="$(LocalDebuggerWorkingDirectory)" />
@@ -401,6 +432,13 @@
       <workItem from="1690213897363" duration="1587000" />
       <workItem from="1690327832243" duration="306000" />
       <workItem from="1690824857444" duration="3412000" />
+      <workItem from="1690847476127" duration="595000" />
+      <workItem from="1690924690083" duration="2803000" />
+      <workItem from="1690999824284" duration="8015000" />
+      <workItem from="1691036969206" duration="184000" />
+      <workItem from="1691037178796" duration="1686000" />
+      <workItem from="1691121222230" duration="579000" />
+      <workItem from="1691122074231" duration="4981000" />
     </task>
     <servers />
   </component>
