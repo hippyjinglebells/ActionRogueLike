@@ -9,24 +9,39 @@ ASPickUpBase::ASPickUpBase()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	SphereComp = CreateDefaultSubobject<USphereComponent>("SphereComp");
+	SphereComp->SetCollisionProfileName("Powerup");
+	RootComponent = SphereComp;
+
+	RespawnTime = 10.0f;
 }
 
 void ASPickUpBase::Interact_Implementation(APawn* InstigatorPawn)
 {
-	
+	//logic in derived classes
 }
 
-// Called when the game starts or when spawned
-void ASPickUpBase::BeginPlay()
+void ASPickUpBase::ShowPowerup()
 {
-	Super::BeginPlay();
-	
+	SetPowerupState(true);
 }
 
-// Called every frame
-void ASPickUpBase::Tick(float DeltaTime)
+void ASPickUpBase::HideAndCooldownPowerup()
 {
-	Super::Tick(DeltaTime);
+	SetPowerupState(false);
 
+	GetWorldTimerManager().SetTimer(TimerHandle_RespawnTimer, this, &ASPickUpBase::ShowPowerup, RespawnTime);
 }
+
+void ASPickUpBase::SetPowerupState(bool bNewIsActive)
+{
+	SetActorEnableCollision(bNewIsActive);
+
+	//Set visibility on root and all children
+	RootComponent->SetVisibility(bNewIsActive, true);
+}
+
+
+
+
 

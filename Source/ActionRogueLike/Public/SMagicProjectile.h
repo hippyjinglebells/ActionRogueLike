@@ -28,6 +28,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UAudioComponent* ImpactAudioComp;
 
+	UPROPERTY(EditAnywhere)
+	float DamageValue;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

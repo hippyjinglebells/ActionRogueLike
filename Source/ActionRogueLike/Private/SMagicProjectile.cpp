@@ -21,7 +21,7 @@ ASMagicProjectile::ASMagicProjectile()
 	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &ASMagicProjectile::OnActorOverlap);
 
 	ImpactAudioComp = CreateDefaultSubobject<UAudioComponent>("ImpactAudioComp");
-	
+		
 }
 
 void ASMagicProjectile::OnActorOverlap(UPrimitiveComponent* OnComponentBeginOverlap,
@@ -32,7 +32,7 @@ void ASMagicProjectile::OnActorOverlap(UPrimitiveComponent* OnComponentBeginOver
 		USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
 		if (AttributeComp)
 		{
-			AttributeComp->ApplyHealthChange(-20.0f);
+			AttributeComp->ApplyHealthChange(-DamageValue);
 		}
 
 		UGameplayStatics::PlaySoundAtLocation(this, ImpactAudioComp->Sound, GetActorLocation());

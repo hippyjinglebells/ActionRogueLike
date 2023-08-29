@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SGameplayInterface.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "SPickUpBase.generated.h"
 
@@ -15,19 +16,23 @@ class ACTIONROGUELIKE_API ASPickUpBase : public AActor, public ISGameplayInterfa
 public:	
 	// Sets default values for this actor's properties
 	ASPickUpBase();
-
+	
 	void Interact_Implementation(APawn* InstigatorPawn) override;
 
 protected:
 
+	UPROPERTY(EditAnywhere, Category="Powerup")
+	float RespawnTime;
+
+	FTimerHandle TimerHandle_RespawnTimer;
+
+	UFUNCTION()
+	void ShowPowerup();
+
+	void HideAndCooldownPowerup();
+
+	void SetPowerupState(bool bNewIsActive);
+		
 	UPROPERTY(VisibleAnywhere)
-	UMeshComponent* MeshComp;
-	
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
+	USphereComponent* SphereComp;
 };
